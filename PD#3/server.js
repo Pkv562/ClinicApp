@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       let uploadDir;
-      if (file.fieldname === 'profilePhoto') {  // Changed from 'profile_picture' to match
+      if (file.fieldname === 'profilePhoto') { 
         uploadDir = path.join(__dirname, 'files', 'patients', 'profilePictures');
       } else if (file.fieldname === 'lab_file') {
         uploadDir = path.join(__dirname, 'files', 'patients', 'labRecords');
@@ -43,7 +43,7 @@ const storage = multer.diskStorage({
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
       const ext = path.extname(file.originalname);
 
-      if (file.fieldname === 'profilePhoto') {  // Changed from 'profile_picture' to match
+      if (file.fieldname === 'profilePhoto') { 
         cb(null, 'profile-' + uniqueSuffix + ext);
       } else {
         cb(null, 'lab-' + uniqueSuffix + ext);
@@ -52,14 +52,13 @@ const storage = multer.diskStorage({
   });
 
   const fileFilter = (req, file, cb) => {
-    if (file.fieldname === 'profilePhoto') {  // This is correct
+    if (file.fieldname === 'profilePhoto') {
         if (file.mimetype.startsWith('image/')) {
             cb(null, true);
         } else {
             cb(new Error('Profile picture must be an image!'), false);
         }
     } else if (file.fieldname === 'lab_file') {
-        // This part is fine
         const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'application/pdf'];
         if (allowedTypes.includes(file.mimetype)) {
             cb(null, true);
@@ -167,8 +166,7 @@ const storage = multer.diskStorage({
           });
       } catch (error) {
           await connection.rollback();
-          
-          // If an error occurs and a file was uploaded, delete it
+
           if (req.file) {
               fs.unlink(req.file.path, (err) => {
                   if (err) console.error('Error deleting file:', err);
@@ -193,7 +191,6 @@ const storage = multer.diskStorage({
     const profilePhotoPath = path.join('files', 'patients', 'profilePictures', req.file.filename).replace(/\\/g, '/');
     
     try {
-        // Get current photo path
         const [rows] = await pool.query(
             'SELECT profile_photo_path FROM patients WHERE id = ?',
             [patientId]
@@ -204,14 +201,12 @@ const storage = multer.diskStorage({
         }
         
         const oldPhotoPath = rows[0].profile_photo_path;
-        
-        // Update database
+
         await pool.query(
             'UPDATE patients SET profile_photo_path = ? WHERE id = ?',
             [profilePhotoPath, patientId]
         );
-        
-        // Delete old file if exists
+
         if (oldPhotoPath) {
             const fullOldPath = path.join(__dirname, oldPhotoPath);
             if (fs.existsSync(fullOldPath)) {
@@ -227,7 +222,6 @@ const storage = multer.diskStorage({
         });
         
     } catch (error) {
-        // Delete uploaded file if error occurs
         if (req.file) {
             fs.unlink(req.file.path, (err) => {
                 if (err) console.error('Error deleting file:', err);
@@ -239,14 +233,12 @@ const storage = multer.diskStorage({
     }
 });
 
-// Also update your GET endpoint to include profile_photo_path
 app.get('/api/patients/:id', async (req, res) => {
     const patientId = req.params.id;
     
     const connection = await pool.getConnection();
     
     try {
-        // Get patient details including profile photo path
         const [patientRows] = await connection.query(
             `SELECT *, profile_photo_path FROM patients WHERE id = ?`,
             [patientId]
@@ -257,8 +249,7 @@ app.get('/api/patients/:id', async (req, res) => {
         }
         
         const patient = patientRows[0];
-        
-        // Get patient allergies
+     
         const [allergiesRows] = await connection.query(
             `SELECT * FROM patient_allergies WHERE patient_id = ?`,
             [patientId]
@@ -488,8 +479,7 @@ app.post('/api/patients/:id/prescriptions', async (req, res) => {
             start_date,
             end_date
         ]);
-        
-        // Make sure we return the complete object with ID
+
         res.status(201).json({ 
             message: 'Prescription added successfully',
             id: result.insertId,
@@ -596,8 +586,7 @@ app.post('/api/patients/:id/supplements', async (req, res) => {
             start_date,
             end_date
         ]);
-        
-        // Make sure we return the complete object with ID
+
         res.status(201).json({ 
             message: 'Prescription added successfully',
             id: result.insertId,

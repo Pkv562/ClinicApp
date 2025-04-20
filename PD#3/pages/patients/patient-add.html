@@ -74,12 +74,10 @@
           </div>
 
           <div class="page-actions">
-            <a href="/patient-list">
-              <button type="button" class="primary-button">
+              <button type="button" id="cancelBtn" class="primary-button">
                 Cancel
                   <img src="/assets/cancel.svg" class="nav-icon-right" width="16" height="16">
               </button>
-            </a>
 
             <button type="button" class="primary-button" id="save-btn">
               Add Patient
@@ -308,7 +306,7 @@
         <!-- CSS -->
         <style>
           .popup-overlay {
-            display: none; /* Hide by default */
+            display: none; 
             position: center;
             top: 0;
             left: 0;
@@ -317,7 +315,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
-            z-index: 1000; /* Ensure it appears above other content */
+            z-index: 1000; 
           }
 
           .popup-box {
@@ -352,14 +350,7 @@
 
               <tbody>
                   <tr>
-                      <td><input type="checkbox" aria-label="Select Samantha M. Roberts"></td>
-                      <td>Metamphetamine</td>
-                      <td>Severe</td>
-                      <td>
-                        <button type="button" class="primary-button">
-                          Delete
-                        </button>
-                      </td>
+              
                   </tr>
               </tbody>
           </table>

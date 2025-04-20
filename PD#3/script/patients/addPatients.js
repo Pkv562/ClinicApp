@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewContainer = document.getElementById('previewContainer');
     const removePhotoBtn = document.getElementById('removePhoto');
 
-    // Set up profile photo functionality
     profilePhotoInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -114,10 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return null;
         };
 
-        // Create FormData for handling file uploads along with other data
         const formData = new FormData();
-        
-        // Add all text fields to formData
+
         const patientData = {
             firstName: document.querySelector('input[name="firstName"]').value.trim(),
             middleName: document.querySelector('input[name="middleName"]').value.trim(),
@@ -142,12 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
             allergies: JSON.stringify(allergiesList)
         };
         
-        // Add all text data fields to formData
         for (const [key, value] of Object.entries(patientData)) {
             formData.append(key, value);
         }
-        
-        // Add profile photo if one was selected
+
         if (profilePhotoFile) {
             formData.append('profilePhoto', profilePhotoFile);
         }
@@ -155,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const res = await fetch('/api/patients', {
                 method: 'POST',
-                body: formData // No need to set Content-Type header, browser sets it with boundary
+                body: formData
             });
 
             const result = await res.json();
@@ -172,3 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+const cancelButton = document.getElementById("cancelBtn");
+if(cancelButton) {
+    cancelButton.addEventListener('click', function() {
+        window.location.href = `/patient-list`;
+    });
+}

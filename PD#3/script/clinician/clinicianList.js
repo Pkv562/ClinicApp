@@ -202,6 +202,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  const addPatientButton = document.getElementById("addClinicianBtn");
+  if(addPatientButton) {
+      addPatientButton.addEventListener('click', function() {
+          window.location.href = `/clinician/clinician-add`;
+      });
+  }
+
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'visible') {
       loadClinicians();

@@ -149,3 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+const addPatientButton = document.getElementById("addPatientBtn");
+if(addPatientButton) {
+    addPatientButton.addEventListener('click', function() {
+        window.location.href = `/patients/patient-add`;
+    });
+}

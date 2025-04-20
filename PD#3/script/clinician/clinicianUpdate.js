@@ -113,8 +113,8 @@ async function updateClinician(event) {
       firstName: document.getElementById('firstName').value,
       middleName: document.getElementById('middleName').value,
       lastName: document.getElementById('lastName').value,
-      age: document.getElementById('age').value,
-      birthDate: document.getElementById('birthDate').value,
+      age: document.getElementById('age').value || null,
+      birthDate: document.getElementById('birthDate').value || null,
       contactNumber: document.getElementById('contactNumber').value,
       citizenship: document.getElementById('citizenship').value,
       address: document.getElementById('address').value,
@@ -171,11 +171,6 @@ function initializeEventListeners() {
     });
   }
   
-
-  document.querySelector('a[href="#home-dashboard"]').href = '/';
-  document.querySelector('a[href="#appointment-list"]').href = '/appointment-list';
-  document.querySelector('a[href="#patient-list"]').href = '/patient-list';
-  document.querySelector('a[href="#clinician-list"]').href = '/clinician-list';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
