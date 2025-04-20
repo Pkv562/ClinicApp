@@ -1,0 +1,81 @@
+.nav-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-x: auto;
+  margin-left: 280px;
+}
+
+.nav-card-container {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--card-stroke);
+}
+
+.nav-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px;
+}
+
+.nav-information {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: var(--primary);
+  color: var(--third-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-section {
+  border-top: 1px solid var(--card-stroke);
+  padding-top: 10px;
+  display: grid;
+  gap: 20px;
+  margin: 14px;
+}
+
+.form-row {
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  gap: 8px;
+}
+
+.form-row p {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 4px;
+  color: var(--secondary-color);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--secondary-subtle);
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.form-group input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--card-stroke);
+  background-color: var(--other-color);
+  font-size: 13px;
+  color: var(--secondary-color);
+}

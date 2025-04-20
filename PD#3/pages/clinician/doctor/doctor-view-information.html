@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/patients/patient-add.css">
+  <link rel="stylesheet" href="/styles/patients/patient-details.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="sidebar-container">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="Logo">
+      </div>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#home-dashboard">
+            <img src="/assets/dashboard-icon.svg" alt="Dashboard" class="nav-icon-left">
+            Dashboard
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+
+        <li>
+          <a href="#appointment-list">
+            <img src="/assets/appointment-icon.svg" alt="Appointment" class="nav-icon-left">
+            Appointments
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="#patient-list">
+            <img src="/assets/patient-icon.svg" alt="Patient" class="nav-icon-left">
+            Patients
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="#clinician-list">
+            <img src="/assets/clinician-icon.svg" alt="Clinician" class="nav-icon-left">
+            Clinicians
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+      </ul>
+
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="/assets/profile-photo.jpg" alt="Profile Photo">
+        </div>
+
+        <div class="profile-details">
+          <p class="user-name">Joseph Angelo Q. Petalio</p>
+          <p class="user-role">Admin</p>
+        </div>
+
+        <img src="/assets/arrow-down.svg" alt="Clinician" class="nav-icon-right">
+      </div>
+    </nav>
+
+    <!-- Information and Quick Actions -->
+    <main class="main-content">
+      <section class="patient-overview">
+          <div class="top-cards-container">
+              <div class="patient-overview">
+                  <div class="patient-profile">
+                    <div class="patient-header">
+                      <img src="patient-avatar.jpg" alt="Patient avatar" class="patient-avatar">
+                      <div class="overview-header">
+                        <h2>Clinician Overview</h2>
+                        <h1>Robert Francis D. Smith</h1>
+                      </div>
+                    </div>
+
+                    <div class="patient-info-grid">
+                      <div class="info-card">
+                          <h3>Clinician Status</h3>
+                          <p class="status-active">Active</p>
+                      </div>
+                      <div class="info-card">
+                          <h3>Specialization</h3>
+                          <p>Niggerologist</p>
+                      </div>
+                      <div class="info-card">
+                          <h3>Next Appointment</h3>
+                          <p>02/03/2024</p>
+                      </div>
+                      <div class="info-card">
+                          <h3>License No.</h3>
+                          <p>MD12345678</p>
+                      </div>
+                    </div>
+                    
+                    <div class="emergency-contact">
+                        <div class="alert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="alert-content">
+                            <h3>Emergency Contact</h3>
+                            <p>In case of an emergency, please contact <strong>Luka Doncic (Brother) 09286279021</strong></p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              
+              <div class="quick-actions-sidebar">
+                  <div class="quick-actions-header">
+                      <div>
+                          <img src="/assets/quick-actions.svg" alt="Quick Actions" class="quick-actions-icon">
+                      </div>
+
+                      <div>
+                        <h3>Quick Actions</h3>
+                      </div>
+                  </div>
+
+                  <div class="action-list">
+                      <button type="button" class="primary-button">
+                        Set an Apppointment
+                          <img src="/assets/appointment2-icon.svg" class="nav-icon-right" width="16" height="16">
+                      </button>
+          
+                      <button type="button" class="primary-button">
+                        Delete Clinician
+                          <img src="/assets/delete.svg" class="nav-icon-right" width="16" height="16">
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </section>
+    </main>
+
+    <main class="nav-content">
+      <div class="nav-card-container">
+        <header class="nav-page-header">
+          <!-- <div>
+            <div class="nav-information">
+              <img src="/assets/patient-information-form.svg" class="nav-icon-left">
+              Patient Information Form
+            </div>
+          </div> -->
+
+          <div class="page-actions">
+            <button type="button" class="primary-button" onclick="location.href='/pages/patients/patient-view-information.html'">
+              <img src="/assets/patient-information.svg" class="nav-icon-left" width="16" height="16">
+              Full Clinician Information
+            </button>
+
+            <button type="button" class="primary-button" onclick="location.href='/pages/patients/patient-last-appointment.html'">
+              <img src="/assets/appointment2-icon.svg" class="nav-icon-left" width="16" height="16">
+              Last Appointments
+            </button>
+
+            <button type="button" class="primary-button" onclick="location.href='/pages/clinician/doctor-prescription.html'">
+              <img src="/assets/prescription-icon.svg" class="nav-icon-left" width="16" height="16">
+              Prescription
+            </button>
+
+            <button type="button" class="primary-button" onclick="location.href='/pages/patients/patient-supplement.html'">
+              <img src="/assets/supplement-icon.svg" class="nav-icon-left" width="16" height="16">
+              Supplement Recommendation
+            </button>
+
+          </div>
+        </header>
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Full Patient Information</h1>
+            <p>All patient information available</p>
+          </div>
+
+          <div class="page-actions">
+            <button type="button" class="primary-button" onclick="location.href='/pages/patients/patient-view-information.html'">
+              Update
+                <img src="/assets/update.svg" class="nav-icon-right" width="16" height="16">
+            </button>
+          </div>
+        </header>
+
+        <section class="form-section">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <p>John</p>
+            </div>
+            <div class="form-group">
+              <label for="middleName">Middle Name</label>
+              <p>Michael</p>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <p>Smith</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <p>25</p>
+            </div>
+            <div class="form-group">
+              <label for="birthDate">Birth Date</label>
+              <p>1998-05-15</p>
+            </div>
+            <div class="form-group">
+              <label for="contactNumber">Contact Number</label>
+              <p>+1 234 567 8900</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="citizenship">Citizenship</label>
+              <p>American</p>
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <p>123 Main St, New York, NY</p>
+            </div>
+            <div class="form-group">
+              <label for="member">Role</label>
+              <p>Doctor</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="socialSecurity">Specialization</label>
+              <p>Niggerologist</p>
+            </div>
+
+            <div class="form-group">
+              <label for="lastMenstrualPeriod">License No.</label>
+              <p>MD12345678</p>
+            </div>
+            
+          </div>
+
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

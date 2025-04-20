@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/patients/patient-list.css">
+  <link rel="stylesheet" href="/styles/patients/patient-add.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="sidebar-container">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="Logo">
+      </div>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#home-dashboard">
+            <img src="/assets/dashboard-icon.svg" alt="Dashboard" class="nav-icon-left">
+            Dashboard
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+
+        <li>
+          <a href="#appointment-list">
+            <img src="/assets/appointment-icon.svg" alt="Appointment" class="nav-icon-left">
+            Appointments
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/pages/patients/patient-list.html">
+            <img src="/assets/patient-icon.svg" alt="Patient" class="nav-icon-left">
+            Patients
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/pages/clinician/clinician-list.html">
+            <img src="/assets/clinician-icon.svg" alt="Clinician" class="nav-icon-left">
+            Clinicians
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+      </ul>
+
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="/assets/profile-photo.jpg" alt="Profile Photo">
+        </div>
+
+        <div class="profile-details">
+          <p class="user-name">Joseph Angelo Q. Petalio</p>
+          <p class="user-role">Admin</p>
+        </div>
+
+        <img src="/assets/arrow-down.svg" alt="Clinician" class="nav-icon-right">
+      </div>
+    </nav>
+
+    <main class="nav-content">
+      <div class="nav-card-container">
+        <header class="nav-page-header">
+          <div class="page-actions">
+            <button type="button" class="primary-button" onclick="location.href='/pages/clinician/clinician-list.html'">
+              <img src="/assets/preview.svg" class="nav-icon-right" width="16" height="16">
+              Doctor
+            </button>
+         
+            <button type="button" class="primary-button" onclick="location.href='/pages/clinician/midwife-list.html'">
+              <img src="/assets/prescription-icon.svg" class="nav-icon-right" width="16" height="16">
+              Midwife
+            </button>
+          </div>
+        </header>
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Midwife</h1>
+            <p>Monitor your midwife here</p>
+          </div>
+
+          <div class="page-actions">
+            <div class="search-container">
+                <input type="search" placeholder="Search here"">
+            </div>
+            
+            <div class="filter-container">
+                <label for="filter">Sort by:</label>
+                <select id="filter" name="filter">
+                    <option value="ascending" selected>Ascending</option>
+                    <option value="descending">Descending</option>
+                </select>
+            </div>
+            
+            <button type="button" class="primary-button" onclick="location.href='/pages/clinician/clinician-add.html'">
+              Add Midwife
+              <img src="/assets/add-patient.svg" class="nav-icon-right">
+            </button>
+           </div>
+        </header>
+
+        <section class="patient-list-table">
+          <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"></th>
+                  <th>Doctor</th>
+                  <th>Status</th>
+                  <th>Last Appointment</th>
+                  <th>Phone Number</th>
+                  <th>Address</th>
+                  <th><span class="visually-hidden">Actions</span></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" aria-label="Select Samantha M. Roberts"></td>
+                  <td>Samantha M. Roberts</td>
+                  <td>Active</td>
+                  <td>02/03/2024 at 1:35pm</td>
+                  <td>(555) 113-4567</td>
+                  <td>123 Main Street, Springfield, LL, USA, 62701</td>
+                  <td>
+                    <button type="button" class="primary-button" onclick="location.href='/pages/patients/patient-view-information.html'">
+                      View
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+          </table>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

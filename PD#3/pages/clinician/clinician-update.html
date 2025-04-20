@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/patients/patient-add.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="sidebar-container">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="Logo">
+      </div>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="/">
+            <img src="/assets/dashboard-icon.svg" alt="Dashboard" class="nav-icon-left">
+            Dashboard
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+
+        <li>
+          <a href="/appointment-list">
+            <img src="/assets/appointment-icon.svg" alt="Appointment" class="nav-icon-left">
+            Appointments
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/patient-list">
+            <img src="/assets/patient-icon.svg" alt="Patient" class="nav-icon-left">
+            Patients
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/clinician-list">
+            <img src="/assets/clinician-icon.svg" alt="Clinician" class="nav-icon-left">
+            Clinicians
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+      </ul>
+
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="/assets/profile-photo.jpg" alt="Profile Photo">
+        </div>
+
+        <div class="profile-details">
+          <p class="user-name">Joseph Angelo Q. Petalio</p>
+          <p class="user-role">Admin</p>
+        </div>
+
+        <img src="/assets/arrow-down.svg" alt="Clinician" class="nav-icon-right">
+      </div>
+    </nav>
+
+    <main class="nav-content">
+      <div class="nav-card-container">
+        <header class="nav-page-header">
+          <div>
+            <div class="nav-information">
+              <img src="/assets/patient-information-form.svg" class="nav-icon-left">
+              Clinician Information Form
+            </div>
+          </div>
+
+          <div class="page-actions">
+            <button type="button" class="primary-button" id="cancel-button">
+              Cancel
+              <img src="/assets/cancel.svg" class="nav-icon-right" width="16" height="16">
+            </button>
+
+            <button type="button" class="primary-button" id="update-button">
+              Update Clinician
+              <img src="/assets/update.svg" class="nav-icon-right">
+            </button>            
+          </div>
+        </header>
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Basic Information</h1>
+            <p>Enter the neccessary clinician information</p>
+          </div>
+
+          <div class="page-actions">
+            <button type="button" class="primary-button">
+              Upload Profile Photo
+              <img src="/assets/upload-file.svg" class="nav-icon-right" width="16" height="16">
+            </button>
+          </div>
+        </header>
+
+        <section class="form-section">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+              <label for="middleName">Middle Name</label>
+              <input type="text" id="middleName" name="middleName" placeholder="Enter Middle Name">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="text" id="age" name="age" placeholder="Enter Age">
+            </div>
+            <div class="form-group">
+              <label for="birthDate">Birth Date</label>
+              <div class="date-input-w">
+                <input type="date" id="birthDate" name="birthDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactNumber">Contact Number</label>
+              <input type="text" id="contactNumber" name="contactNumber" placeholder="Enter Contact Number">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="citizenship">Citizenship</label>
+              <input type="text" id="citizenship" name="citizenship" placeholder="Enter Citizenship">
+            </div>
+
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" placeholder="Enter Address">
+            </div>
+            
+            <div class="form-group">
+              <label for="middleName">Role</label>
+              <div class="filter-container">
+                <select id="filter" name="filter">
+                    <option value="doctor" selected>Doctor</option>
+                    <option value="midwife">Midwife</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="specialization">Specialization</label>
+              <input type="text" id="specialization" name="specialization" placeholder="Enter Specialization">
+            </div>            
+
+            <div class="form-group">
+              <label for="licenseNo">License No.</label>
+              <input type="text" id="licenseNo" name="licenseNo" placeholder="Enter License Number">
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Emergency</h1>
+            <p>Enter the person to contact in case of an emergency</p>
+          </div>
+        </header>
+
+        <section class="form-section">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="emFirstName">First Name</label>
+              <input type="text" id="emFirstName" name="emFirstName" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+              <label for="emMiddleName">Middle Name</label>
+              <input type="text" id="emMiddleName" name="emMiddleName" placeholder="Enter Middle Name">
+            </div>
+            <div class="form-group">
+              <label for="emLastName">Last Name</label>
+              <input type="text" id="emLastName" name="emLastName" placeholder="Enter Last Name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="emRelationship">Relationship</label>
+              <input type="text" id="emRelationship" name="emRelationship" placeholder="Enter Relationship">
+            </div>
+            <div class="form-group">
+              <label for="emContactNumber">Contact Number</label>
+              <input type="text" id="emContactNumber" name="emContactNumber" placeholder="Enter Contact Number">
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </main>
+    
+  </div>
+
+  <script src="/script/clinician/clinicianUpdate.js"></script>
+</body>
+</html>

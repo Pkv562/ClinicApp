@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/patients/patient-add.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="sidebar-container">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="Logo">
+      </div>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="/">
+            <img src="/assets/dashboard-icon.svg" alt="Dashboard" class="nav-icon-left">
+            Dashboard
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+
+        <li>
+          <a href="/appointment-list">
+            <img src="/assets/appointment-icon.svg" alt="Appointment" class="nav-icon-left">
+            Appointments
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/patient-list">
+            <img src="/assets/patient-icon.svg" alt="Patient" class="nav-icon-left">
+            Patients
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/clinician-list">
+            <img src="/assets/clinician-icon.svg" alt="Clinician" class="nav-icon-left">
+            Clinicians
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+      </ul>
+
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="/assets/profile-photo.jpg" alt="Profile Photo">
+        </div>
+
+        <div class="profile-details">
+          <p class="user-name">Joseph Angelo Q. Petalio</p>
+          <p class="user-role">Admin</p>
+        </div>
+
+        <img src="/assets/arrow-down.svg" alt="Clinician" class="nav-icon-right">
+      </div>
+    </nav>
+
+    <main class="nav-content">
+      <div class="nav-card-container">
+        <header class="nav-page-header">
+          <div>
+            <div class="nav-information">
+              <img src="/assets/patient-information-form.svg" class="nav-icon-left">
+              Patient Information Form
+            </div>
+          </div>
+
+          <div class="page-actions">
+              <button type="button" id="cancel-update" class="primary-button">
+                Cancel
+                  <img src="/assets/cancel.svg" class="nav-icon-right" width="16" height="16">
+              </button>
+
+            <button type="button" id="updatePatientButton" class="primary-button">
+              Update Patient
+              <img src="/assets/update.svg" class="nav-icon-right">
+            </button>
+          </div>
+        </header>
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Basic Information</h1>
+            <p>Enter the neccessary patient information</p>
+          </div>
+
+          <div class="page-actions">
+            <label for="profilePhotoInput" class="primary-button" id="addProfile-btn">
+              Upload Profile Photo
+              <img src="/assets/upload-file.svg" class="nav-icon-right" width="16" height="16">
+            </label>
+            <input type="file" id="profilePhotoInput" name="profilePhoto" accept="image/*" style="display: none;">
+            <div id="previewContainer" style="margin-top: 10px; display: none;">
+              <img id="photoPreview" style="max-width: 200px; max-height: 200px;">
+              <button type="button" id="removePhoto" class="secondary-button">Remove</button>
+              <button type="button" id="updatePhotoBtn" class="primary-button">Update Photo</button>
+            </div>
+          </div>
+        </header>
+
+        <section class="form-section">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+              <label for="middleName">Middle Name</label>
+              <input type="text" id="middleName" name="middleName" placeholder="Enter Middle Name">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="text" id="age" name="age" placeholder="Enter Age">
+            </div>
+            <div class="form-group">
+              <label for="birthDate">Birth Date</label>
+              <div class="date-input-w">
+                <input type="date" id="birthDate" name="birthDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactNumber">Contact Number</label>
+              <input type="text" id="contactNumber" name="contactNumber" placeholder="Enter Contact Number">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="citizenship">Citizenship</label>
+              <input type="text" id="citizenship" name="citizenship" placeholder="Enter Citizenship">
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" placeholder="Enter Address">
+            </div>
+            <div class="form-group">
+              <label for="member">Member</label>
+              <input type="text" id="member" name="member" placeholder="Enter Member Status">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="socialSecurity">Social Security</label>
+              <input type="text" id="socialSecurity" name="socialSecurity" placeholder="Enter Social Security Number">
+            </div>
+            <div class="form-group">
+              <label for="gravidity">Gravidity</label>
+              <input type="text" id="gravidity" name="gravidity" placeholder="Enter Gravidity">
+            </div>
+            <div class="form-group">
+              <label for="parity">Parity</label>
+              <input type="text" id="parity" name="parity" placeholder="Enter Parity">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="lastMenstrualPeriod">Last Menstrual Period</label>
+              <div class="date-input-wrapper">
+                <input type="date" id="lastMenstrualPeriod" name="lastMenstrualPeriod">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="expectedDateOfConfinement">Expected Date of Confinement</label>
+              <div class="date-input-wrapper">
+                <input type="date" id="expectedDateOfConfinement" name="expectedDateOfConfinement">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group full-width">
+              <label for="note">Add Note</label>
+              <input type="text" id="note" name="note" placeholder="Enter Note">
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Emergency</h1>
+            <p>Enter the person to contact in case of an emergency</p>
+          </div>
+        </header>
+
+        <section class="form-section">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="emergencyFirstName" name="emergencyFirstName" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+              <label for="middleName">Middle Name</label>
+              <input type="text" id="emergencyMiddleName" name="emergencyMiddleName" placeholder="Enter Middle Name">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="emergencyLastName" name="emergencyLastName" placeholder="Enter Last Name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">Relationship</label>
+              <input type="text" id="emergencyRelationship" name="emergencyRelationship" placeholder="Enter Relationship">
+            </div>
+            <div class="form-group">
+              <label for="middleName">Contact Number</label>
+              <input type="text" id="emergencyContactNumber" name="emergencyContactNumber" placeholder="Enter Contact Number">
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Allergies</h1>
+            <p>Know your patients allergies</p>
+          </div>
+
+          <div class="page-actions">
+            <button type="button" id="addAllergyButton" class="primary-button">
+              Add Allergy
+              <img src="/assets/allergy.svg" class="nav-icon-right" width="16" height="16">
+            </button>
+           </div>
+        </header>
+
+        <div id="popup" class="popup-overlay">
+          <div class="popup-box">
+            <main class="main-content">
+              <div class="card-container">
+                <header class="page-header">
+                  <div>
+                    <h1>Allergy</h1>
+                    <p>Identify the patients allergy</p>
+                  </div>
+
+                  <div class="page-actions">
+                    <button type="button" class="primary-button" onclick="closePopup()">
+                      Close
+                      <img src="/assets/cancel.svg" class="nav-icon-right" width="16" height="16">
+                    </button>
+
+                    <button type="button" id="confirmAddAllergyButton" class="primary-button">
+                      Add Allergy
+                      <img src="/assets/allergy.svg" class="nav-icon-right" width="16" height="16">
+                    </button>
+                  </div>
+                </header>
+
+                <section class="form-section">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="allergyName">Allergy Name</label>
+                      <input type="text" id="allergyName" placeholder="Enter Allergy Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="allergySeverity">Severity</label>
+                      <div class="filter-container">
+                        <select id="allergySeverity" name="allergySeverity">
+                            <option value="mild" selected>Mild</option>
+                            <option value="severe">Severe</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </main>
+          </div>
+        </div>
+
+        <!-- CSS -->
+        <style>
+          .popup-overlay {
+            display: none; /* Hide by default */
+            position: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure it appears above other content */
+          }
+
+          .popup-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+        </style>
+
+        <!-- JS -->
+        <script>
+          function openPopup() {
+            document.getElementById('popup').style.display = 'flex';
+          }
+
+          function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+          }
+        </script>
+
+        <section class="patient-list-table">
+          <table>
+              <thead>
+                  <tr>
+                      <th><input type="checkbox"></th>
+                      <th>Allergy</th>
+                      <th>Severity</th>
+                      <th><span class="visually-hidden">Actions</span></th>
+                  </tr>
+              </thead>
+
+              <tbody>
+                  <tr>
+                      <td><input type="checkbox" aria-label="Select Samantha M. Roberts"></td>
+                      <td>Metamphetamine</td>
+                      <td>Severe</td>
+                      <td>
+                        <button type="button" class="primary-button">
+                          Delete
+                        </button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="/script/patients/patientUpdate.js"></script>
+
+</body>
+</html>

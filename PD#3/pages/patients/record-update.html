@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/patients/patient-add.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="sidebar-container">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="Logo">
+      </div>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="/home-dashboard">
+            <img src="/assets/dashboard-icon.svg" alt="Dashboard" class="nav-icon-left">
+            Dashboard
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+
+        <li>
+          <a href="/appointment-list">
+            <img src="/assets/appointment-icon.svg" alt="Appointment" class="nav-icon-left">
+            Appointments
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/patient-list">
+            <img src="/assets/patient-icon.svg" alt="Patient" class="nav-icon-left">
+            Patients
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/clinician-list">
+            <img src="/assets/clinician-icon.svg" alt="Clinician" class="nav-icon-left">
+            Clinicians
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+      </ul>
+
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="/assets/profile-photo.jpg" alt="Profile Photo">
+        </div>
+
+        <div class="profile-details">
+          <p class="user-name">Joseph Angelo Q. Petalio</p>
+          <p class="user-role">Admin</p>
+        </div>
+
+        <img src="/assets/arrow-down.svg" alt="Clinician" class="nav-icon-right">
+      </div>
+    </nav>
+
+    <main class="nav-content">
+      <div class="nav-card-container">
+        <header class="nav-page-header">
+          <div>
+            <div class="nav-information">
+              <img src="/assets/record-form.svg" class="nav-icon-left">
+              Laboratory Record Form
+            </div>
+          </div>
+
+          <div class="page-actions">
+            <button type="button" class="primary-button" onclick="location.href='/pages/patients/patient-list.html'">
+              Cancel
+                <img src="/assets/cancel.svg" class="nav-icon-right" width="16" height="16">
+            </button>
+
+            <button type="button" class="primary-button">
+              Update Laboratory Record
+              <img src="/assets/update.svg" class="nav-icon-right">
+            </button>
+          </div>
+        </header>
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Basic Summary</h1>
+            <p>Enter the neccessary patient record information</p>
+          </div>
+
+          <div class="page-actions">
+            <input type="file" id="labFileInput" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+            <button type="button" id="addLabBtn" class="primary-button">
+              Upload PDF/IMG
+              <img src="/assets/upload-file.svg" class="nav-icon-right" width="16" height="16">
+            </button>
+          </div>
+          <div id="filePreview" style="margin-top: 10px; display: none;">
+            <span id="fileName"></span>
+            <button type="button" id="removeFile" style="margin-left: 10px;">×</button>
+          </div>
+        </header>
+
+        <section class="form-section">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">Type</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+              <label for="birthDate">Date</label>
+              <div class="date-input-w">
+                <input type="date" id="birthDate" name="birthDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Company</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="birthDate">Ordered</label>
+              <div class="date-input-w">
+                <input type="date" id="birthDate" name="birthDate">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="birthDate">Recieved</label>
+              <div class="date-input-w">
+                <input type="date" id="birthDate" name="birthDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="birthDate">Reported</label>
+              <div class="date-input-w">
+                <input type="date" id="birthDate" name="birthDate">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="citizenship">Doctor</label>
+              <input type="text" id="citizenship" name="citizenship" placeholder="Enter Citizenship">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="citizenship">Remarks</label>
+              <input type="text" id="citizenship" name="citizenship" placeholder="Enter Citizenship">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="citizenship">Impression</label>
+              <input type="text" id="citizenship" name="citizenship" placeholder="Enter Citizenship">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group full-width">
+              <label for="note">Recomendation</label>
+              <input type="text" id="note" name="note" placeholder="Enter Note">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="citizenship">Notes</label>
+              <input type="text" id="citizenship" name="citizenship" placeholder="Enter Citizenship">
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/script/patients/recordUpdate.js"></script>
+
+</body>
+</html>

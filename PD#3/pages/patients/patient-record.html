@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/patients/patient-add.css">
+  <link rel="stylesheet" href="/styles/patients/patient-details.css">
+  <link rel="stylesheet" href="/styles/patients/patient-record.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="sidebar-container">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="Logo">
+      </div>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="/">
+            <img src="/assets/dashboard-icon.svg" alt="Dashboard" class="nav-icon-left">
+            Dashboard
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+
+        <li>
+          <a href="/appointment-list">
+            <img src="/assets/appointment-icon.svg" alt="Appointment" class="nav-icon-left">
+            Appointments
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/patient-list">
+            <img src="/assets/patient-icon.svg" alt="Patient" class="nav-icon-left">
+            Patients
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/clinician-list">
+            <img src="/assets/clinician-icon.svg" alt="Clinician" class="nav-icon-left">
+            Clinicians
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+      </ul>
+
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="/assets/profile-photo.jpg" alt="Profile Photo">
+        </div>
+
+        <div class="profile-details">
+          <p class="user-name">Joseph Angelo Q. Petalio</p>
+          <p class="user-role">Admin</p>
+        </div>
+
+        <img src="/assets/arrow-down.svg" alt="Clinician" class="nav-icon-right">
+      </div>
+    </nav>
+
+    <!-- Information and Quick Actions -->
+    <main class="main-content">
+      <section class="patient-overview">
+          <div class="top-cards-container">
+              <div class="patient-overview">
+                  <div class="patient-profile">
+                    <div class="patient-header">
+                      <img src="patient-avatar.jpg" alt="Patient avatar" class="patient-avatar">
+                      <div class="overview-header">
+                        <h2>Patient Overview</h2>
+                        <h1>Samantha M. Roberts</h1>
+                      </div>
+                    </div>
+
+                    <div class="patient-info-grid">
+                      <div class="info-card">
+                          <h3>Patient Status</h3>
+                          <p class="status-active">Active</p>
+                      </div>
+                      <div class="info-card">
+                          <h3>Clinician Assigned</h3>
+                          <p>Robert Francis D. Smith</p>
+                      </div>
+                      <div class="info-card">
+                          <h3>Next Appointment</h3>
+                          <p>02/03/2024</p>
+                      </div>
+                      <div class="info-card">
+                          <h3>Last Visit</h3>
+                          <p>--/--/----</p>
+                      </div>
+                    </div>
+                    
+                    <div class="emergency-contact">
+                        <div class="alert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="alert-content">
+                            <h3>Emergency Contact</h3>
+                            <p>In case of an emergency, please contact <strong>Luka Doncic (Brother) 09286279021</strong></p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              
+              <div class="quick-actions-sidebar">
+                  <div class="quick-actions-header">
+                      <div>
+                          <img src="/assets/quick-actions.svg" alt="Quick Actions" class="quick-actions-icon">
+                      </div>
+
+                      <div>
+                        <h3>Quick Actions</h3>
+                      </div>
+                  </div>
+
+                  <div class="action-list">
+                      <button type="button" class="primary-button">
+                        Set an Apppointment
+                          <img src="/assets/appointment2-icon.svg" class="nav-icon-right" width="16" height="16">
+                      </button>
+          
+                      <button type="button" id="deletePatientBtn" class="primary-button">
+                        Delete Patient
+                          <img src="/assets/delete.svg" class="nav-icon-right" width="16" height="16">
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </section>
+    </main>
+
+    <main class="nav-content">
+      <div class="nav-card-container">
+        <header class="nav-page-header">
+          <div class="page-actions">
+              <button type="button" id="full-info" class="primary-button">
+                <img src="/assets/patient-information.svg" class="nav-icon-left" width="16" height="16">
+                Full Patient Information
+              </button>
+
+            <button type="button" class="primary-button">
+              <img src="/assets/appointment2-icon.svg" class="nav-icon-left" width="16" height="16">
+              Last Appointments
+            </button>
+
+              <button type="button" id="prescription-btn" class="primary-button">
+                <img src="/assets/prescription-icon.svg" class="nav-icon-left" width="16" height="16">
+                Prescription
+              </button>
+
+              <button type="button" id="supplement-btn" class="primary-button">
+                <img src="/assets/supplement-icon.svg" class="nav-icon-left" width="16" height="16">
+                Supplement Recommendation
+              </button>
+
+              <button type="button" id="laboratory-btn" class="primary-button">
+                <img src="/assets/record-icon.svg" class="nav-icon-left">
+                Laboratory Record
+              </button>
+          </div>
+        </header>
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Laboratory Record</h1>
+            <p>Look at all records of the patient</p>
+          </div>
+
+          <div class="page-actions">
+            <div class="search-container">
+              <input type="search" placeholder="Search here"">
+            </div>
+          
+            <div class="filter-container">
+              <label for="filter">Sort by:</label>
+              <select id="filter" name="filter">
+                  <option value="ascending" selected>Ascending</option>
+                  <option value="descending">Descending</option>
+              </select>
+            </div>
+            
+              <button type="button" class="primary-button" id="addRecordBtn">
+                Add Laboratory Record
+                <img src="/assets/record-icon.svg" class="nav-icon-right" width="16" height="16">
+            </button>
+           </div>
+          </header>
+
+          <section class="form-section">
+             <!-- Record Section -->
+            </div>
+  
+          </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/script/patients/patientRecord.js"></script>
+
+</body>
+</html>

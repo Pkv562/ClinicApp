@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Prescriptions | Admin Panel</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/patients/patient-details.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="sidebar-container">
+      <div class="logo-container">
+        <img src="/assets/logo.png" alt="Logo" class="Logo">
+      </div>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="/">
+            <img src="/assets/dashboard-icon.svg" alt="Dashboard" class="nav-icon-left">
+            Dashboard
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+
+        <li>
+          <a href="/appointment-list">
+            <img src="/assets/appointment-icon.svg" alt="Appointment" class="nav-icon-left">
+            Appointments
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/patient-list">
+            <img src="/assets/patient-icon.svg" alt="Patient" class="nav-icon-left">
+            Patients
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="/clinician-list">
+            <img src="/assets/clinician-icon.svg" alt="Clinician" class="nav-icon-left">
+            Clinicians
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+      </ul>
+
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="/assets/profile-photo.jpg" alt="Profile Photo">
+        </div>
+
+        <div class="profile-details">
+          <p class="user-name" id="clinician-name">Loading...</p>
+          <p class="user-role" id="clinician-role">Loading...</p>
+        </div>
+
+        <img src="/assets/arrow-down.svg" alt="Clinician" class="nav-icon-right">
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>My Prescriptions</h1>
+            <p>View all prescriptions you have written for patients</p>
+          </div>
+
+          <div class="page-actions">
+            <div class="search-container">
+                <input type="search" id="search-input" placeholder="Search prescriptions...">
+            </div>
+            
+            <div class="filter-container">
+                <label for="filter">Sort by:</label>
+                <select id="filter" name="filter">
+                    <option value="newest" selected>Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="patient-az">Patient Name (A-Z)</option>
+                    <option value="patient-za">Patient Name (Z-A)</option>
+                </select>
+            </div>
+          </div>
+        </header>
+
+        <section class="patient-list-table">
+          <table>
+              <thead>
+                  <tr>
+                      <th>Patient Name</th>
+                      <th>Prescription</th>
+                      <th>Amount</th>
+                      <th>Frequency</th>
+                      <th>Route</th>
+                      <th>Status</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Actions</th>
+                  </tr>
+              </thead>
+
+              <tbody id="prescriptions-table-body">
+                  <tr>
+                      <td colspan="9" class="text-center">Loading prescriptions...</td>
+                  </tr>
+              </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/script/clinician/clinicianPrescription.js"></script>
+</body>
+</html>

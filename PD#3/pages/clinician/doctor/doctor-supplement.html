@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/patients/patient-add.css">
+  <link rel="stylesheet" href="/styles/patients/patient-details.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="sidebar-container">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="Logo">
+      </div>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#home-dashboard">
+            <img src="/assets/dashboard-icon.svg" alt="Dashboard" class="nav-icon-left">
+            Dashboard
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+
+        <li>
+          <a href="#appointment-list">
+            <img src="/assets/appointment-icon.svg" alt="Appointment" class="nav-icon-left">
+            Appointments
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="#patient-list">
+            <img src="/assets/patient-icon.svg" alt="Patient" class="nav-icon-left">
+            Patients
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+        
+        <li>
+          <a href="#clinician-list">
+            <img src="/assets/clinician-icon.svg" alt="Clinician" class="nav-icon-left">
+            Clinicians
+            <img src="/assets/arrow-right.svg" alt="Clinician" class="nav-icon-right">
+          </a>
+        </li>
+      </ul>
+
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="/assets/profile-photo.jpg" alt="Profile Photo">
+        </div>
+
+        <div class="profile-details">
+          <p class="user-name">Joseph Angelo Q. Petalio</p>
+          <p class="user-role">Admin</p>
+        </div>
+
+        <img src="/assets/arrow-down.svg" alt="Clinician" class="nav-icon-right">
+      </div>
+    </nav>
+
+    <!-- Information and Quick Actions -->
+    <main class="main-content">
+      <section class="patient-overview">
+          <div class="top-cards-container">
+              <div class="patient-overview">
+                  <div class="patient-profile">
+                    <div class="patient-header">
+                      <img src="patient-avatar.jpg" alt="Patient avatar" class="patient-avatar">
+                      <div class="overview-header">
+                        <h2>Clinician Overview</h2>
+                        <h1>Robert Francis D. Smith</h1>
+                      </div>
+                    </div>
+
+                    <div class="patient-info-grid">
+                      <div class="info-card">
+                          <h3>Clinician Status</h3>
+                          <p class="status-active">Active</p>
+                      </div>
+                      <div class="info-card">
+                          <h3>Specialization</h3>
+                          <p>Niggerologist</p>
+                      </div>
+                      <div class="info-card">
+                          <h3>Next Appointment</h3>
+                          <p>02/03/2024</p>
+                      </div>
+                      <div class="info-card">
+                          <h3>License No.</h3>
+                          <p>MD12345678</p>
+                      </div>
+                    </div>
+                    
+                    <div class="emergency-contact">
+                        <div class="alert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="alert-content">
+                            <h3>Emergency Contact</h3>
+                            <p>In case of an emergency, please contact <strong>Luka Doncic (Brother) 09286279021</strong></p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              
+              <div class="quick-actions-sidebar">
+                  <div class="quick-actions-header">
+                      <div>
+                          <img src="/assets/quick-actions.svg" alt="Quick Actions" class="quick-actions-icon">
+                      </div>
+
+                      <div>
+                        <h3>Quick Actions</h3>
+                      </div>
+                  </div>
+
+                  <div class="action-list">
+                      <button type="button" class="primary-button">
+                        Set an Apppointment
+                          <img src="/assets/appointment2-icon.svg" class="nav-icon-right" width="16" height="16">
+                      </button>
+          
+                      <button type="button" class="primary-button">
+                        Delete Clinician
+                          <img src="/assets/delete.svg" class="nav-icon-right" width="16" height="16">
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </section>
+    </main>
+
+    <main class="nav-content">
+      <div class="nav-card-container">
+        <header class="nav-page-header">
+          <!-- <div>
+            <div class="nav-information">
+              <img src="/assets/patient-information-form.svg" class="nav-icon-left">
+              Patient Information Form
+            </div>
+          </div> -->
+
+          <div class="page-actions">
+            <button type="button" class="primary-button" onclick="location.href='/pages/patients/patient-view-information.html'">
+              <img src="/assets/patient-information.svg" class="nav-icon-left" width="16" height="16">
+              Full Clinician Information
+            </button>
+
+            <button type="button" class="primary-button" onclick="location.href='/pages/patients/patient-last-appointment.html'">
+              <img src="/assets/appointment2-icon.svg" class="nav-icon-left" width="16" height="16">
+              Last Appointments
+            </button>
+
+            <button type="button" class="primary-button" onclick="location.href='/pages/clinician/doctor-prescription.html'">
+              <img src="/assets/prescription-icon.svg" class="nav-icon-left" width="16" height="16">
+              Prescription
+            </button>
+
+            <button type="button" class="primary-button" onclick="location.href='/pages/patients/patient-supplement.html'">
+              <img src="/assets/supplement-icon.svg" class="nav-icon-left" width="16" height="16">
+              Supplement Recommendation
+            </button>
+
+          </div>
+        </header>
+      </div>
+    </main>
+
+    <main class="main-content">
+      <div class="card-container">
+        <header class="page-header">
+          <div>
+            <h1>Supplement</h1>
+            <p>Look at what is recommended to the patient</p>
+          </div>
+
+          <div class="page-actions">
+            <div class="search-container">
+                <input type="search" placeholder="Search here"">
+            </div>
+            
+            <div class="filter-container">
+                <label for="filter">Sort by:</label>
+                <select id="filter" name="filter">
+                    <option value="ascending" selected>Ascending</option>
+                    <option value="descending">Descending</option>
+                </select>
+            </div>
+
+           </div>
+        </header>
+
+        <!-- Popup Container -->
+        <div id="popup" class="popup-overlay">
+          <div class="popup-box">
+            <main class="main-content">
+              <div class="card-container">
+                <header class="page-header">
+                  <div>
+                    <h1>Prescription</h1>
+                    <p>Add your prescription</p>
+                  </div>
+
+                  <div class="page-actions">
+                    <!-- Fixed close button - removed typo in onclick and added text-align right -->
+                    <button type="button" class="primary-button" onclick="closePopup()">
+                      Close
+                      <img src="/assets/cancel.svg" class="nav-icon-right" width="16" height="16">
+                    </button>
+
+                    <button type="button" class="primary-button">
+                      Add Prescription
+                      <img src="/assets/prescription-icon.svg" class="nav-icon-right" width="16" height="16">
+                    </button>
+                  </div>
+                </header>
+
+                <section class="form-section">
+                  <div class="form-row">
+                  <div class="form-group">
+                    <label for="prescription">Prescription</label>
+                    <input type="text" id="prescription" placeholder="Enter prescription name">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text" id="amount" placeholder="Enter amount">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="frequency">Frequency</label>
+                    <input type="text" id="frequency" placeholder="Enter frequency">
+                  </div>
+                  </div>
+
+                  <div class="form-row">
+                  <div class="form-group">
+                    <label for="route">Route</label>
+                    <input type="text" id="route" placeholder="Enter route">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="status">Status</label>
+                    <div class="filter-container">
+                    <select id="status" name="status">
+                      <option value="active" selected>Active</option>
+                      <option value="inactive">Inactive</option>
+                    </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="prescribedBy">Prescribed by</label>
+                    <input type="text" id="prescribedBy" placeholder="Enter doctor name">
+                  </div>
+                  </div>
+                  
+                  <div class="form-row">
+                  <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <div class="date-input-wrapper">
+                    <input type="date" id="startDate" name="startDate">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <div class="date-input-wrapper">
+                    <input type="date" id="endDate" name="endDate">
+                    </div>
+                  </div>
+                  </div>
+
+                </section>
+              </div>
+            </main>
+          </div>
+        </div>
+
+        <!-- CSS -->
+        <style>
+          .popup-overlay {
+            display: none; /* Hide by default */
+            position: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure it appears above other content */
+          }
+
+          .popup-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+        </style>
+
+        <!-- JS -->
+        <script>
+          function openPopup() {
+            document.getElementById('popup').style.display = 'flex';
+          }
+
+          function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+          }
+        </script>
+
+        <section class="patient-list-table">
+          <table>
+              <thead>
+                  <tr>
+                      <th><input type="checkbox"></th>
+                      <th>Prescription</th>
+                      <th>Amount</th>
+                      <th>Frequency</th>
+                      <th>Route</th>
+                      <th>Status</th>
+                      <th>Prescribed by</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+
+                  </tr>
+              </thead>
+
+              <tbody>
+                  <tr>
+                      <td><input type="checkbox" aria-label="Select Samantha M. Roberts"></td>
+                      <td>Metamphetamine</td>
+                      <td>500 mg</td>
+                      <td>3 times a day</td>
+                      <td>Oral</td>
+                      <td>Active</td>
+                      <td>Robert Francis D. Smith</td>
+                      <td>01/01/2024</td>
+                      <td>01/01/2025</td>
+                  </tr>
+              </tbody>
+          </table>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
