@@ -227,10 +227,22 @@
         
                 <section class="form-section">
                   <div class="form-row">
-                  <div class="form-group">
-                    <label for="prescription">Prescription</label>
-                    <input type="text" id="prescription" placeholder="Enter prescription name">
-                  </div>
+                    <div class="form-group">
+                      <label for="prescription">Prescription</label>
+                      <input list="prescriptions" id="prescription" class="form-control" placeholder="Enter or select prescription">
+                      <datalist id="prescriptions">
+                        <option value="Ferrous Sulfate">
+                        <option value="Folic Acid">
+                        <option value="Calcium Carbonate + Vitamin D">
+                        <option value="Prenatal Vitamins">
+                        <option value="Paracetamol">
+                        <option value="Duphaston">
+                        <option value="Isoxsuprine">
+                        <option value="Amoxicillin">
+                        <option value="Metoclopramide">
+                        <option value="Vitamin B Complex">
+                      </datalist>
+                    </div>                    
 
                   <div class="form-group">
                     <label for="amount">Amount</label>

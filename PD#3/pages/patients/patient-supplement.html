@@ -227,10 +227,22 @@
         
                 <section class="form-section">
                   <div class="form-row">
-                  <div class="form-group">
-                    <label for="prescription">Supplement</label>
-                    <input type="text" id="prescription" placeholder="Enter prescription name">
-                  </div>
+                    <div class="form-group">
+                      <label for="prescription">Supplement</label>
+                      <input list="supplements" id="prescription" class="form-control" placeholder="Enter or select supplement">
+                      <datalist id="supplements">
+                        <option value="Folic Acid">
+                        <option value="Ferrous Sulfate">
+                        <option value="Calcium + Vitamin D">
+                        <option value="Prenatal Multivitamins">
+                        <option value="Vitamin C">
+                        <option value="Omega-3 Fatty Acids (DHA)">
+                        <option value="Vitamin B Complex">
+                        <option value="Magnesium Supplement">
+                        <option value="Zinc Supplement">
+                        <option value="Iron + Folic Acid Combination">
+                      </datalist>
+                    </div>                    
 
                   <div class="form-group">
                     <label for="amount">Amount</label>

@@ -20,7 +20,6 @@ function formatDate(dateString) {
 
 async function loadClinicians() {
   try {
-
     document.getElementById('patientTableBody').innerHTML = 
       '<tr><td colspan="7">Loading clinicians...</td></tr>';
     
@@ -31,11 +30,8 @@ async function loadClinicians() {
     }
     
     allClinicians = await response.json();
-    filteredClinicians = [...allClinicians];
-  
-    sortClinicians('name_asc');
+    applyRoleFilter();
     
-    displayClinicians();
   } catch (error) {
     console.error('Error loading clinicians:', error);
     document.getElementById('patientTableBody').innerHTML = 
@@ -43,12 +39,27 @@ async function loadClinicians() {
   }
 }
 
+function applyRoleFilter() {
+  const filterValue = document.getElementById('roleFilter').value.toLowerCase();
+  
+  if (filterValue === 'all') {
+    filteredClinicians = [...allClinicians];
+  } else {
+    filteredClinicians = allClinicians.filter(clinician => {
+      const role = (clinician.staff_role || '').toLowerCase();
+      return role.includes(filterValue);
+    });
+  }
+  
+  sortClinicians('name_asc'); 
+}
+
 function displayClinicians() {
   const tableBody = document.getElementById('patientTableBody');
   tableBody.innerHTML = '';
   
   if (filteredClinicians.length === 0) {
-    tableBody.innerHTML = '<tr><td colspan="7">No clinicians found</td></tr>';
+    tableBody.innerHTML = '<tr><td colspan="7">No clinicians found matching the selected filter</td></tr>';
     return;
   }
   
@@ -177,6 +188,13 @@ document.addEventListener('DOMContentLoaded', function() {
   if (filterElement) {
     filterElement.addEventListener('change', function() {
       sortClinicians(this.value);
+    });
+  }
+
+  const roleFilterElement = document.getElementById('roleFilter');
+  if (roleFilterElement) {
+    roleFilterElement.addEventListener('change', function() {
+      applyRoleFilter();
     });
   }
 
